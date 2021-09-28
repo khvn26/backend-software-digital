@@ -1,0 +1,19 @@
+# IDE
+.vscode/
+
+# Environment
+.envrc
+.direnv/
+.python-version
+
+# Caches
+__pycache__/
+.pytest_cache/
+
+# App data
+data/db
+data/media
+
+# Testing
+htmlcov/
+.coverage

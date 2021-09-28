@@ -1,0 +1,19 @@
+services:
+    db:
+        image: postgres
+        volumes:
+            - ./data/db:/var/lib/postgresql/data
+        environment:
+            - POSTGRES_DB=postgres
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres
+    web:
+        build:
+            context: .
+            dockerfile: docker/Dockerfile
+        ports:
+            - "8000:80"
+        volumes:
+            - ./data/media:/var/www/media
+        depends_on:
+            - db
